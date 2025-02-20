@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package smart_environment;
+
+// Device type enumeration
+enum DeviceType {
+  UNKNOWN = 0;
+  LUMINOSITY_SENSOR = 1;
+  DISTANCE_SENSOR = 2;
+}
+
+// Device state message
+message DeviceState {
+  string device_id = 1;
+  DeviceType type = 2;
+  oneof sensor_data {
+    LuminosityData luminosity = 3;
+    DistanceData distance = 4;
+  }
+}
+
+// Luminosity sensor data
+message LuminosityData {
+  uint32 raw_value = 1;
+  enum State {
+    UNKNOWN = 0;
+    DARK = 1;
+    DIM = 2;
+    BRIGHT = 3;
+  }
+  State state = 2;
+}
+
+// Distance sensor data
+message DistanceData {
+  uint32 distance_cm = 1;
+  enum State {
+    UNKNOWN = 0;
+    CLOSE = 1;
+    MEDIUM = 2;
+    FAR = 3;
+  }
+  State state = 2;
+}
