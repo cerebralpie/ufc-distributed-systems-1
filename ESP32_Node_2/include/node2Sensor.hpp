@@ -1,5 +1,5 @@
-#ifndef SENSOR_HPP
-#define SENSOR_HPP
+#ifndef NODE2_SENSOR_HPP
+#define NODE2_SENSOR_HPP
 
 #include <Arduino.h>
 
@@ -14,5 +14,6 @@ enum class DistanceState {
 
 uint32_t getDistance();
 DistanceState classifyDistance(uint32_t distance);
+DistanceState getDistanceClassification();
 
-#endif // SENSOR_HPP
+#endif // NODE2_SENSOR_HPP

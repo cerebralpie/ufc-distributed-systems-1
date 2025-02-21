@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "sensor.hpp"
+#include "node2Sensor.hpp"
 
 uint32_t getDistance() {
     digitalWrite(TRIG_PIN, LOW);
@@ -19,4 +19,9 @@ DistanceState classifyDistance(uint32_t distance) {
     } else {
         return DistanceState::FAR;
     }
+}
+
+DistanceState getDistanceClassification()
+{
+    return classifyDistance(getDistance());
 }

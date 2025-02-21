@@ -1,5 +1,5 @@
-#ifndef NETWORK_HPP
-#define NETWORK_HPP
+#ifndef NODE2_NETWORK_HPP
+#define NODE2_NETWORK_HPP
 
 #include <Arduino.h>
 #include <WiFi.h>
@@ -31,4 +31,4 @@ bool configureStaticIP();
 void printNetworkInfo();
 ConnectionState connectToWiFi();
 
-#endif // NETWORK_HPP
+#endif // NODE_2NETWORK_HPP
