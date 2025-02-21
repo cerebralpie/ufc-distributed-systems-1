@@ -1,5 +1,5 @@
-#ifndef SENSOR_HPP
-#define SENSOR_HPP
+#ifndef NODE1_SENSOR_HPP
+#define NODE1_SENSOR_HPP
 
 #include <Arduino.h>
 
@@ -18,4 +18,4 @@ enum class LuminosityState {
 uint16_t readSensor();
 LuminosityState classifyLuminosity(uint16_t luminosity);
 
-#endif // SENSOR_HPP
+#endif // NODE1_SENSOR_HPP

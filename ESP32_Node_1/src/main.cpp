@@ -1,5 +1,6 @@
 #include "proto/messages.pb.h"
-#include "sensor.hpp"
+#include "node1Sensor.hpp"
+#include "node1Socket.hpp"
 #include <Arduino.h>
 #include <pb_encode.h>
 #include <pb_decode.h>
@@ -27,6 +28,8 @@ void setup() {
     Serial.println("\nFalha ao tentar conectar ao WiFi.");
     Serial.println("Por favor, cheque as credenciais e o status do roteador.");
   }
+
+  socketInitialize();
 }
 
 void loop() {
@@ -50,7 +53,9 @@ void loop() {
       }
   }
     
-    // Your main code here
+    // Código de leitura da luminosidade, seguido de envio dos dados para 
+    // o gateway
+
 
     delay(100);  // Previnir reinicialização do watchdog
 }

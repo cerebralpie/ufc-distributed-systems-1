@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "sensor.hpp"
+#include "node1Sensor.hpp"
 
 uint16_t readSensor() {
     return analogRead(SENSOR_PIN);
